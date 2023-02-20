@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+/*------------------------------ Barra ------------------------------*/
+.barra{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    bottom: 0;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    background-color: rgb(184, 182, 182);
+    border-top-left-radius: .8em;
+    border-top-right-radius: .8em;
+    max-width: 720px;
+    z-index: 1000;
+}
+
+.navegacion{
+    height: 100%;
+    width: 14.28vw;
+    border: 0;
+    border-left: .5px;
+    border-right: .5px;
+    border-style: solid;
+    border-color: #dee2e6;
+    align-items: center;
+    text-align: center;
+}
+
+.navegacion a{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.navegacion img{
+    height: 70%;
+    width: auto;
+}
+
+.navegacion:hover{
+    background-color: rgb(138, 138, 138);
+}
+
+.navegacion:first-child{
+    border-left: 0;
+}
+
+.navegacion:last-child{
+    border-right: 0;
+    border-radius: 0;
+}
+
+.navegacion:last-child img{
+    border-radius: 100%;
+}
+
+/*------------------------------ Header ------------------------------*/
+.header{
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+}
+
+.header h2{
+    background-color:rgb(184, 182, 182);
+    height: 9vh;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vh;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/*------------------------------ Contenido ------------------------------*/
+.contenido{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    padding: 10px 20px 0;
+}
+/*------------------------------ Generales ------------------------------*/
+.bttn{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(255, 0, 76);
+    border:1px solid rgb(252, 67, 123);
+    border-radius: 5px ;
+    padding: 6px 12px;
+}
+  
+.bttn:hover{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(182, 0, 55) ;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.20);
+    box-shadow: 3px 3px rgb(0 0 0 / 50%);
+}
+
+button{
+    color: white;
+    background-color: rgb(255, 0, 76) ;
+    border:1px solid rgb(252, 67, 123);
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+button:hover{
+    background-color: rgb(182, 0, 55);
+    border: 1px solid rgba(0,0,0,.20);
+    cursor: pointer;
+    box-shadow: 3px 3px rgb(0 0 0 / 50%);
+}
+
+.eliminar{
+    text-decoration: none;
+    color: white;
+}
+
+.eliminar:hover{
+    color: white;
+}
+/*------------------------------ Ajustes para computadoras ------------------------------*/
+@media (min-width:720px){
+    .barra{
+        width: 110px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        background-color: rgb(184, 182, 182);
+        border-radius: 0;
+        border-top-right-radius: .6em;
+        border-bottom-right-radius: .6em;
+        flex-direction: column;
+    }
+
+    .navegacion{
+        border: 0;
+        border-bottom: 1px solid #dee2e6;
+        width: 100%;  
+        height: 14.28vh;
+    }
+
+    .navegacion img{
+        width: auto;
+        height: 60%;
+    }
+
+    .navegacion:last-child img{
+        border: 0;
+        border-radius: 100%;
+    }
+
+    .header{
+        width: calc(100% - 120px);
+        left: 120px;
+    }
+
+    .header h2{
+        font-size: 5vh;
+    }
+
+    .contenido{
+        width: calc(100% - 110px);
+        height: auto;
+        left: 110px;
+    }
+}
+
+@media (max-width:520px){
+    .navegacion img{
+        width: 60%;
+        height: auto;
+    }
+
+    .header h2{
+        font-size: 3.4vh;
+    }
+}
+
+@media (max-width:420px){
+    .header h2{
+        font-size: 2.4vh;
+    }
+}

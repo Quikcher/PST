@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Inicio de sesión</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <div class="contenido">
+        <div class="modal" id="modal">
+            <div class="modalBox">
+                <div class="logo">
+                    <img id=logo src="img/logo.png" alt="Logo">
+                </div>
+                <div class="formulario">
+                    
+                    <div class="form-ingresar">
+                        <form method="POST" onsubmit="validar_usuario()" id="formulario">
+                            <p><span>Iniciar Sesión</span></p>
+                            <!-- Grupo: Usuario -->
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="U_Name" id="usuario" placeholder="Usuario" onkeypress="return permite(event,'num_car')">
+                                <label class="formulario__label">Usuario</label>
+                            </div>     
+                            <!-- Grupo: Contraseña -->
+                            <div class="formulario__grupo-input">
+                                <input type="password" class="formulario__input" name="U_Password" id="password" placeholder="Contraseña">
+                                <label class="formulario__label">Contraseña</label>
+                            </div>
+                            <button type="submit" id="iniciar">Ingresar</button>
+                        </form>
+                    </div>
+                    <div class="recuperar-ingresar">
+                        <a id="recuperar" href="#">Recuperar contraseña</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/ajax.js"></script>
+</html>

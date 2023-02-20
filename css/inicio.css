@@ -1,0 +1,12 @@
+body{
+    grid-template-areas:"barra contenido"
+                        "barra footer";
+}
+
+.contenido{
+    height: 90vh;
+}
+
+.contenido__img > img{
+    height: 45vh;
+}
