@@ -64,8 +64,8 @@
         <div class="cliente">
             <input autocomplete="off" type="number" name="Cedula" id="Cedula" placeholder="Cédula">
             <br>
-            <input autocomplete="off" type="checkbox" name="nuevo_cliente" id="nuevo_cliente">
-            <label for="nuevo_cliente">Cliente no frecuente</label>
+            <input autocomplete="off" type="checkbox" name="nuevo_cliente" id="check_nuevo_cliente">
+            <label for="check_nuevo_cliente">Cliente no frecuente</label>
             <br>
             <form action="" method="post" id="nuevo_cliente" class="oculto" autocomplete="no">
                 <input type="text" name="" id="" placeholder="Nombre">
@@ -76,17 +76,18 @@
                 <input type="checkbox" name="" id="agregar_cliente">
                 <label for="agregar_cliente">Agregar como cliente frecuente</label>
                 <br>
-                <input type="text" name="correo" id="correo" placeholder="Correo">
+                <input type="text" name="correo" id="correo" placeholder="Correo" class="oculto">
             </form>
         </div>
         <div class="botones"> 
             <div class="vender">
-                <button type="submit" name="Agregar"><b>Vender</b></button>
+                <button type="submit" name="Agregar"><img src="../../img/vender.png" alt="vender"></button>
             </div>
-            <div class="regresar">
-                <button type="button" onclick="history.back()" name="regresar" id="regresar"><b>Regresar</b></button>
+            <div class="volver">
+                <button type="button" onclick="history.back()" name="volver" id="volver"><img src="../../img/volver.png" alt="volver"></button>
             </div>
         </div>
     </div> 
+    <script src="../../js/ventas.js"></script>
 </body>
 </html>

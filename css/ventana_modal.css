@@ -42,7 +42,6 @@
 }
 
 /* Mostrar ventana modal */
-.show{
-pointer-events: visibleFill;
-opacity: 1;
+.visible{
+    display: grid;
 }

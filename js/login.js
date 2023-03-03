@@ -1,42 +1,55 @@
-function permite(elEvento, permitidos) {
-    // Variables que definen los caracteres permitidos
-    var numeros = "0123456789";
-    var caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-    var numeros_caracteres = numeros + caracteres;
-    var teclas_especiales = [46];
-    // 8 = BackSpace, 46 = Supr, 37 = flecha izquierda, 39 = flecha derecha
-  
-  
-    // Seleccionar los caracteres a partir del parámetro de la función
-    switch(permitidos) {
-      case 'num':
-        permitidos = numeros;
-        break;
-      case 'car':
-        permitidos = caracteres;
-        break;
-      case 'num_car':
-        permitidos = numeros_caracteres;
-        break;
-    }
-  
-    // Obtener la tecla pulsada
-    var evento = elEvento || window.event;
-    var codigoCaracter = evento.charCode || evento.keyCode;
-    var caracter = String.fromCharCode(codigoCaracter);
-  
-    // Comprobar si la tecla pulsada es alguna de las teclas especiales
-    // (teclas de borrado y flechas horizontales)
-    var tecla_especial = false;
-    for(var i in teclas_especiales) {
-      if(codigoCaracter == teclas_especiales[i]) {
-        tecla_especial = true;
-        break;
-      }
-    }
-  
-    // Comprobar si la tecla pulsada se encuentra en los caracteres permitidos
-    // o si es una tecla especial
-    return permitidos.indexOf(caracter) != -1 || tecla_especial;
+function filtro(string){//solo letras y numeros
+  var out = '';
+  //Se añaden las letras validas
+  var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+
+  for (var i=0; i<string.length; i++)
+     if (filtro.indexOf(string.charAt(i)) != -1) 
+     out += string.charAt(i);
+  return out;
 }
 
+$( '#formulario' ).submit(function( event ) {
+  usuario = document.getElementById('usuario').value;
+  password = document.getElementById('password').value;
+
+  consulta = {
+   "U_Name": usuario,
+   "U_Password": password 
+    };
+  
+  $.ajax({
+   data:consulta,
+       type:"POST",    
+       url: "controladores/login.php",
+       success: function(received) {
+       
+           switch (received) {
+            case 'Administrador':
+                window.location.href='vistas/inicio.php'
+              break;
+            case 'Empleado':
+                window.location.href='vistas/empleados/inicio.php'
+              break;
+            case 'noData':
+                mostrar();
+                setTimeout(oculto, 5000);
+              break;
+           
+            default:
+              break;
+           }
+       }
+   });
+  event.preventDefault();
+});
+
+function mostrar() {
+const oculto = document.getElementById('oculto');
+  oculto.classList.remove('oculto')
+}
+
+function oculto() {
+const oculto = document.getElementById('oculto');
+  oculto.classList.add('oculto')
+}

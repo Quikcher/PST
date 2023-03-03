@@ -20,15 +20,18 @@
 
         switch ($_SESSION['U_Tipo']){
             case 'Administrador':
-                header('location: ../vistas/inicio.php');
+                echo("Administrador");
+                //header('location: ../vistas/inicio.php');
                 break;
             case 'Empleado':
-                header('location: ../vistas/empleados/inicio.php');
+                echo("Empleado");
+                //header('location: ../vistas/empleados/inicio.php');
                 break;
         }
     }else{
         session_destroy();
-        header("location: ../index.html");
+        echo("noData");
+        //header("location: ../index.html");
     }
 
     mysqli_close($conexion);  

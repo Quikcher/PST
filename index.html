@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery/jquery-3.6.3.min.js"></script>
+
     <title>Inicio de sesión</title>
 </head>
 <body>
@@ -17,11 +20,11 @@
                 </div>
                 <div class="formulario">
                     <div class="form-ingresar">
-                        <form method="POST" action="controladores/login.php" id="formulario">
+                        <form method="POST" id="formulario">
                             <p><span>Iniciar Sesión</span></p>
                             <!-- Grupo: Usuario -->
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="U_Name" id="usuario" placeholder="Usuario" onkeypress="return permite(event,'num_car')">
+                                <input type="text" class="formulario__input" name="U_Name" id="usuario" placeholder="Usuario" onkeyup="this.value=filtro(this.value)" maxlength="12">
                                 <label class="formulario__label">Usuario</label>
                             </div>     
                             <!-- Grupo: Contraseña -->
@@ -29,6 +32,8 @@
                                 <input type="password" class="formulario__input" name="U_Password" id="password" placeholder="Contraseña">
                                 <label class="formulario__label">Contraseña</label>
                             </div>
+                            <p class="oculto" id="oculto">Usuario o contraseña incorrectos</p>
+
                             <button type="submit" id="iniciar">Ingresar</button>
                         </form>
                     </div>

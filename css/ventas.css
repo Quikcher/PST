@@ -137,6 +137,7 @@ tbody > tr:hover{
     align-items: center;
     justify-items: center;
     gap: 4vw;
+    margin-bottom: 3vh;
 }
 
 .vender{
@@ -145,8 +146,12 @@ tbody > tr:hover{
     justify-items: end;
 }
 
-.regresar{
+.volver{
     width: 100%;
     display: grid;
     justify-items: start;
+}
+
+.botones img{
+    height: 6vh;
 }

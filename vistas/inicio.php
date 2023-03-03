@@ -5,20 +5,22 @@
   }
 
   require("layouts/header.php"); ?> <!-- Contiene el cabecero de html y los estilos generales para todos los documentos -->
+  <link rel="stylesheet" href="../css/precio_dolar.css">
   <link rel="stylesheet" href="../css/inicio.css">
   <title>Inicio</title>
 </head>
 <body>
-<?php require("layouts/barra.html") ?> <!-- Barra de navegación -->
+<?php
+require("layouts/barra.html") ?> <!-- Barra de navegación -->
 
 <!--Contenido de cada página-->
   <div class="contenido">
     <div class="botones">
       <div class="botones__ventas">
-        <button onclick="ventas()">Ventas</button>
+        <button id="ventas">Ventas</button>
       </div>
       <div class="botones__dolar">
-        <input type="text" name="dolar" placeholder="Bs" disabled>
+        <input type="number" name="dolar" id="dolar" placeholder="Bs" readOnly="false">
       </div>
     </div>
 
@@ -35,4 +37,6 @@
       </table>
     </div>
   </div>
+
+<script src="../js/inicio.js"></script>
 <?php require("layouts/footer.html") ?>

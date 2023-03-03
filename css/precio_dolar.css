@@ -1,0 +1,53 @@
+                                                        /* Generales */
+.modal{
+    display: grid;
+}
+
+.modalBox{
+    background-color: rgb(252, 225, 241);
+    width: auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:"modalBox__header"
+                        "input"
+                        "boton";
+    gap: 2vh;
+    min-height: 25vh;
+    max-height: 35vh;
+}
+
+                                                            /* modalBox__header */
+.modalBox__header{
+    background-color: rgb(198,33,99);
+    font-weight: bold;
+    border-radius: 1.2vh;
+    grid-area: modalBox__header;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.modalBox__header > h2{
+    color: rgb(255,255,255);
+}
+
+                                                            /* Input */
+.input{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.input input{
+    margin: 0;
+}
+
+.boton{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
