@@ -40,28 +40,3 @@ function permite(elEvento, permitidos) {
     return permitidos.indexOf(caracter) != -1 || tecla_especial;
 }
 
-function validar_usuario(){
-    usuario = document.getElementById('usuario').value;
-    password = document.getElementById('password').value;
-
-    consulta = {
-    "U_Name": usuario,
-    "U_Password": password 
-   };
-    
-    $.ajax({
-        data:consulta,
-        type:"POST",    
-        url: "validar.php",
-        beforesend: function(result1) {
-            $('#DATOS').html("Mensaje antes de enviar")
-        },
-        success: function(result1) {
-            if (result1 == 1) {
-                location.replace('inicio.php');
-            }else if (result == 0) {
-                location.replace('index.html');
-            }
-        }
-    });
-}

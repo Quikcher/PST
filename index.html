@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/index.css">
     <title>Inicio de sesión</title>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 <body>
     <div class="contenido">
@@ -17,9 +16,8 @@
                     <img id=logo src="img/logo.png" alt="Logo">
                 </div>
                 <div class="formulario">
-                    
                     <div class="form-ingresar">
-                        <form method="POST" onsubmit="validar_usuario()" id="formulario">
+                        <form method="POST" action="controladores/login.php" id="formulario">
                             <p><span>Iniciar Sesión</span></p>
                             <!-- Grupo: Usuario -->
                             <div class="formulario__grupo-input">
@@ -41,6 +39,6 @@
             </div>
         </div>
     </div>
+<script src="js/login.js"></script>
 </body>
-<script src="js/ajax.js"></script>
 </html>

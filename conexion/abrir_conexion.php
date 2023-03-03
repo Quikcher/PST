@@ -5,6 +5,13 @@
 	$clavedb = "mary9874123563";   
 	$conexion = mysqli_connect($host,$usuariodb,$clavedb,$basededatos);
 
+	if ($conexion->connect_errno){
+		echo "No se pudo conectar con MYSQL: ".$conexion->connect_error;
+		exit();
+	}
+
+	$conexion->set_charset("utf8");
+
 	$tabla_db1 = "ciudad";
 	$tabla_db2 = "cliente";
 	$tabla_db3 = "cliente_compra_producto";

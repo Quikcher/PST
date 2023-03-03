@@ -1,54 +1,47 @@
 addEventListener("load", (event) => {
-            
-            
-            $.ajax({
-         
-                url: "consultas/tabla__usuarios.php",
-                
-                beforesend: function(result) {
-                    $('#mostrar').html("Cargando datos ...")
-                },
-                success: function(result) {
-                    
-                    $('#mostrar').html(result)
-                }
-            });
+    $.ajax({
+        async: true,
+        url: "../controladores/tabla__usuarios.php",
+        beforesend: function(result) {
+            $('#mostrar').html("Cargando datos ...")
+        },
+        success: function(result) {            
+            $('#usuario').html(result)
+        },error: function(request, status, error){
+
+        }
+    });
 });
 
-
 function eliminar(U_Name){
-   
    consulta = {
     "U_Name": U_Name 
    };
    result = confirm("¿Desea eliminar el usuario: "+U_Name+"?");
 
    if (result == true) {
-
-    quest = prompt("Ingrese la contraseña del usuario administrador:");
-
-        if (quest != "") {
-            
-            $.ajax({
-                data:consulta,
-                type:"POST",    
-                url: "consultas/eliminar_usuario.php",
-                beforesend: function(result1) {
-                    $('#DATOS').html("Mensaje antes de enviar")
-                },
-                success: function(result1) {
-                    
-                    if (result1 == 1) {
-
+        $.ajax({
+            data:consulta,
+            type:"POST",    
+            url: "../controladores/eliminar_usuario.php",
+            beforesend: function(result1) {
+                $('#DATOS').html("Mensaje antes de enviar")
+            },
+            success: function(result1) {
+                
+                if (result1 == 1) {
                     alert("Usuario eliminado");
                     location.reload();
-                    }
                 }
-            });
-        }
+            },
+            error: function(request, status, error){
+
+            }
+        });
+        
     }
 }
-
+/*
 document.getElementById('empleado').addEventListener('click', estados());
 
 function estados(){
@@ -64,4 +57,4 @@ function InsertarEstados(estado){
     const selectElement = document.getElementById("estados");
     let htmlToInsert = `<option value="${estado}">${estado}</option>`
     selectElement.insertAdjacentHTML("beforeend", htmlToInsert)
-}
+}*/
