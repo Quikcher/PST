@@ -1,0 +1,57 @@
+<div class="modal" id="modal">
+    <div class="modalBox">
+        <div class="header_modal">
+            <div class="titulo_modal">
+                <h1>REGISTRAR NUEVO USUARIO</h1>
+            </div>
+        </div>
+        <form action="backend/agregar_usuario.php" method="POST" class="formulario" id="nuevo_empleado">
+            <div class="formulario_modal">
+                <div class="f1">
+                    <select name="cargo" id="cargo">
+                        <option value="Empleado">Empleado</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                </div>
+                <div class="f2">
+                    <input type="text" placeholder="Usuario">
+                    <input type="text" placeholder="Contraseña">
+                    <input type="text" placeholder="Repetir contraseña">
+                </div>
+                <div class="f3">
+                    <select name="pregunta1" id="pregunta1">
+                        <option hidden>Pregunta 1</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                    <select name="pregunta2" id="pregunta2">
+                        <option hidden>Pregunta 2</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                    <select name="pregunta3" id="pregunta3">
+                        <option hidden>Pregunta 3</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </div>
+                <div class="f4">
+                    <input type="text" name="respuesta1" id="respuesta1" placeholder="Respuesta 1">
+                    <input type="text" name="respuesta2" id="respuesta2" placeholder="Respuesta 2">
+                    <input type="text" name="respuesta3" id="respuesta3" placeholder="Respuesta 3">
+                </div>
+            </div>
+        </form>
+        <div class="botones_modal"> 
+            <div class="agregar_usuario">
+                <button type="submit" name="agregar_usuario"><img src="../img/guardar_empleado.png" alt="Agregar empleado"></button>
+            </div>
+            <div class="volver">
+                <button type="button" name="volver" id="close"><img src="../img/volver.png" alt="Volver"></button>
+            </div>
+        </div>
+    </div>
+</div>

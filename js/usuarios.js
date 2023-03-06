@@ -41,20 +41,11 @@ function eliminar(U_Name){
         
     }
 }
-/*
-document.getElementById('empleado').addEventListener('click', estados());
 
-function estados(){
-    let Estados = ["Amazonas", "Anzoátegui", "Apure", "Aragua", "Barinas", "Bolívar", "Carabobo", "Caracas", "Cojedes", "Delta Amacuro", "Dependencias Federales", 
-                    "Falcón", "Guárico", "Lara", "Mérida", "Miranda", "Monagas", "Nueva Esparta", "Portuguesa", "Sucre", "Táchira", 
-                    "Trujillo", "Vargas", "Yaracuy", "Zulia"]
-    for (var i = 0; i <Estados.length ; i++) {
-        InsertarEstados(Estados[i])
-    }
-}
+document.querySelector('#agregar_empleado').addEventListener('click',(e) => {
+    e.preventDefault()
+    const data = Object.fromEntries(
+        new FormData(nuevo_empleado)
+    );
+});
 
-function InsertarEstados(estado){
-    const selectElement = document.getElementById("estados");
-    let htmlToInsert = `<option value="${estado}">${estado}</option>`
-    selectElement.insertAdjacentHTML("beforeend", htmlToInsert)
-}*/
