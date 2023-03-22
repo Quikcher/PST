@@ -29,12 +29,6 @@ function nuevo_empleado() {
     }
 }
 
-
-
-
-
-
-
 const nombre = document.getElementById("nombre");
 const s_nombre = document.getElementById("s_nombre");
 const apellido = document.getElementById("apellido");
@@ -112,3 +106,34 @@ direccion.addEventListener("input", (event) => {
     event.target.value = event.target.value.slice(0, maxLength_direccion);
   }
 });
+
+// cargar datos para la seleccion de estados 
+    $.ajax({
+        type:"POST",    
+        url: "../controladores/estados.php",
+        success: function(recieved) {
+            estado= document.getElementById('estado');
+            estado.insertAdjacentHTML("beforeend", recieved)
+          
+        },
+        error: function(request, status, error){
+
+        }
+    });
+
+$('#estado').on('change', ciudad);
+
+function ciudad(){
+    dato = document.getElementById('estado').value;
+    datos = {"estado": dato};
+
+    $.ajax({
+        data: datos,
+        type:"POST",    
+        url: "../controladores/ciudad.php",
+        success: function(recieved) {
+            let ciudad= document.getElementById('ciudad');
+            $('#ciudad').html(recieved)
+        },
+    });
+}
