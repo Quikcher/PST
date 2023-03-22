@@ -161,7 +161,6 @@ input:focus~.label__input{
     position: fixed;
     align-items: center;
     justify-items: center;
-
 }
 
 .modalBox{
@@ -173,6 +172,8 @@ input:focus~.label__input{
     border-radius: 1.2vh;
     box-shadow: -6px -6px 20px rgba(0,0,0,0.5);
 }
+
+
                                                             /* Footer */
 .footer{
     grid-area: footer;

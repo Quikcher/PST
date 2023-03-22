@@ -9,7 +9,8 @@ require("layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="../css/usuarios.css">
-<link rel="stylesheet" href="../css/nuevo_empleado.css">
+<link id= "cssmodal" rel="stylesheet" href="../css/nuevo_empleado.css">
+
 <title>Administrador De Usuarios</title>
 </head>
 <?php include("layouts/barra.html") ?>
@@ -27,11 +28,11 @@ require("layouts/header.php");
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center">#</th>
-                    <th scope="col" class="text-center">Usuario</th>
-                    <th scope="col" class="text-center">Tipo de Usuario</th>
-                    <th scope="col" class="text-center">Cedula</th>
-                    <th scope="col" class="text-center"></th>
+                    <th>#</th>
+                    <th>Usuario</th>
+                    <th>Tipo de Usuario</th>
+                    <th>Cédula</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="usuario"></tbody>

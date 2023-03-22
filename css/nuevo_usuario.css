@@ -57,13 +57,13 @@
     gap: 4vw;
 }
 
-.agregar_empleado{
+.agregar_usuario{
     width: 100%;
     display: grid;
     justify-items: end;
 }
 
-.agregar_empleado img{
+.agregar_usuario img{
   height: 4.5vh;
   width: auto;
 }
