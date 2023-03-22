@@ -1,59 +1,52 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <link rel="stylesheet" href="../../css/estilo.css">
-    <link rel="stylesheet" href="../../css/nuevo_empleado.css">
-    <title>Nuevo empleado</title>
-</head>
-<body>
-    <div class="contenido">
-        <div class="header">
-            <div class="titulo">
-                <h1>REGISTRAR NUEVO EMPLEADO</h1>
+
+        <div class="modalBox">
+            <div class="header_modal">
+                <div class="titulo_modal">
+                    <h1>REGISTRAR NUEVO EMPLEADO</h1>
+                </div>
             </div>
-        </div>
-        <div class="formulario">
-            <form action="backend/agregar_usuario.php" method="POST" class="Formulario" id="Usuario">
-                <input type="text" name="" id="" placeholder="Nombre">
-                <input type="text" name="" id="" placeholder="Segundo nombre">
-                <input type="text" name="" id="" placeholder="Apellido">
-                <input type="text" name="" id="" placeholder="Segundo apellido">
-                <input type="text" name="" id="direccion" placeholder="Direccion">
-                <br>
-                <input type="text" name="" id="" placeholder="Doc. Identidad">
-                <input type="text" name="" id="" placeholder="Telefono">
-                <select name="estado" id="estado">
-                    <option hidden="hidden">Estado</option>
+            <form action="" method="POST" class="formulario_modal" id="Empleado">
+                <input type="text" id="nombre" name="Nombre" placeholder="Nombre">
+                <input type="text" id="s_nombre" name="S_Nombre" placeholder="Segundo nombre">
+                <input type="text" id="apellido" name="Apellido" placeholder="Apellido">
+                <input type="text" id="s_apellido" name="S_Apellido" placeholder="Segundo apellido">
+                <input type="number" id="ci" name="CI" placeholder="Doc. Identidad">
+                <select name="Sexo" id="sexo">
+                    <option hidden>Sexo</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
                 </select>
-                <select name="ciudad" id="ciudad">
+                <input type="number" name="Telefono" id="telefono" placeholder="Telefono">
+                <select name="Cargo" id="cargo">
+                    <option hidden>Cargo</option>
+                    <option value="Director General">Director General</option>
+                    <option value="Gerente Administrativo">Gerente Administrativo</option>
+                    <option value="Encargado de Almacen">Encargado de Almacen</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Cajero">Cajero</option>
+                    <option value="Personal de Limpieza">Personal de Limpieza</option>
+                </select>
+                <select name="Estado" id="estado">
+                    <option hidden>Estado</option>
+                </select>
+                <select name="Ciudad" id="ciudad">
                     <option hidden="hidden">Ciudad</option>
                 </select>
-                <br>
-                <input type="checkbox" name="" id="agregar_cliente">
-                <label for="agregar_cliente">Asignar un usuario para acceder al sistema</label>
-                <hr />
-                <div class="oculto visible">
-                    <select name="cargo" id="cargo">
-                        <option hidden="hidden">Cargo</option>
-                    </select>
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuario">
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
-                    <input type="password" name="reppetir_password" id="repetir_password" placeholder="Repetir contraseña">
+                <input type="text" name="Direccion" id="direccion" placeholder="Direccion">
+                <hr>
+                <div>
+                    <input type="checkbox" id="agregar_cliente">
+                    <label for="agregar_cliente">Asignar un usuario para acceder al sistema</label>                   
                 </div>
             </form>
-        </div>
-        <div class="botones"> 
-            <div class="agregar">
-                <button type="submit" name="Agregar"><img src="../../img/guardar_empleado.png" alt="Agregar empleado"></button>
+            <div class="botones_modal"> 
+                <div class="agregar_empleado">
+                    <button type="submit" id="agregar_empleado" name="agregar_empleado"><img src="../img/guardar_empleado.png" alt="Agregar empleado"></button>
+                </div>
+                <div class="volver">
+                    <button type="button" name="volver" id="close"><img src="../img/volver.png" alt="Volver"></button>
+                </div>
             </div>
-            <div class="regresar">
-                <button type="button" onclick="history.back()" name="regresar" id="regresar"><b>Regresar</b></button>
-            </div>
         </div>
-    </div> 
-</body>
-</html>
+    </div>
+    <script src="../js/nuevo_empleado.js"></script>

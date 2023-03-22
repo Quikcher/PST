@@ -1,77 +1,74 @@
                                                     /* Generales */
-body{
-    grid-template-areas: "contenido contenido"
-                         "contenido contenido"
-                         "contenido contenido";
-}
-
-.contenido{
-    width: 100vw;
-    height: 100vh;
-    grid-area: contenido;
-    grid-template-rows: 9vh auto 9vh;
-    grid-template-areas: "header"
-                         "formulario"
-                         "botones";
+.modalBox{
+  width: 60vw;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-areas:"header_modal"
+                      "formulario_modal"
+                      "botones_modal";
+  gap: 2vh;
 }
 
 hr{
-    grid-area: divisor;
     height: 1px;
-    width: 95vw;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.visible{
-  display: inline-block;
-}
-                                                    /* Header */
-.header{
-  font-weight: bold;
-  grid-area: header;
-  height: 100%;
-  color: rgb(255,255,255);
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-.titulo{
-  background-color: rgb(198,33,99);
-  width: 94vw;
+                                                    /* Header */
+.header_modal{
+  grid-area: header_modal;
+  height: 100%;
+  width: 60vw;
+  color: rgb(255,255,255);
+  display: grid;
+}
+
+.titulo_modal{
+  width: 100%;
   height: calc(100% - 2vh);
   display: grid;
   align-items: center;
   justify-items: center;
+  background-color: rgb(198,33,99);
   border-radius: 1.2vh;
-  margin-top: 2vh;
+  padding: 1vh 0;
 }
+
                                                          /* Formulario */
-.formulario{
-    grid-area: formulario;
-    width: 100vw;
+.formulario_modal{
+    grid-area: formulario_modal;
+    width: 60vw;
     height: 100%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr 1fr;
     justify-items: center;
     align-items: center;
 }
 
-.formulario form{
-  width: 94vw;
+.formulario_modal input:nth-child(11){
+  grid-row: 6 / 7;
+	grid-column: 1 / 3;
+  width: 26vw;
 }
-
-.form{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+.formulario_modal hr:nth-child(12){
+  grid-row: 7 / 8;
+  grid-column: 1 / 3;
 }
-
-#direccion{
-  width: 25vw;
+.formulario_modal div:nth-child(13){
+  grid-row: 8 / 9;
+  grid-column: 1 / 3;
 }
                                                             /* Botones */
-.botones{
-    grid-area: botones;
+.botones_modal{
+    grid-area: botones_modal;
     height: 100%;
-    width: 100vw;
+    width: 60vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -79,19 +76,28 @@ hr{
     gap: 4vw;
 }
 
-.agregar{
+.agregar_empleado{
     width: 100%;
     display: grid;
     justify-items: end;
 }
 
-.agregar img{
+.agregar_empleado img{
   height: 4.5vh;
   width: auto;
 }
 
-.regresar{
+.volver{
     width: 100%;
     display: grid;
     justify-items: start;
+}
+
+.volver img{
+  height: 4.5vh;
+  width: auto;
+}
+
+.oculto{
+  display: none;
 }
