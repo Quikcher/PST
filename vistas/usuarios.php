@@ -9,7 +9,7 @@ require("layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="../css/usuarios.css">
-<link id= "cssmodal" rel="stylesheet" href="../css/nuevo_empleado.css">
+<link id= "cssmodal" rel="stylesheet" href="../css/nuevo_usuario.css">
 
 <title>Administrador De Usuarios</title>
 </head>
@@ -42,7 +42,7 @@ require("layouts/header.php");
 
 <div class="modal oculto" id="modal">
     <?php
-        require("pop-up/nuevo_empleado.html"); 
+        require("pop-up/nuevo_usuario.html"); 
     ?>
 </div>
 <?php

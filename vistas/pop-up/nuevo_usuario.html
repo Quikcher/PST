@@ -4,48 +4,48 @@
                     <h1>REGISTRAR NUEVO USUARIO</h1>
                 </div>
             </div>
-            <form action="" method="POST" class="formulario_modal" id="Usuario">
+            <form action="" method="POST" class="formulario_modal" id="formUsuario">
                 <select name="U_Tipo" id="U_Tipo">
                     <option value="Empleado">Empleado</option>
                     <option value="Administrador">Administrador</option>
                 </select>
-                <input type="text" name="Usuario" placeholder="Usuario">
-                <input type="text" name="Password" placeholder="Contraseña">
-                <input type="text" name="Password2" placeholder="Repetir contraseña">
+                <input type="text" id="U_Name" name="U_Name" placeholder="Usuario">
+                <input type="password" id="Password" name="Password" placeholder="Contraseña">
+                <input type="password" id="Password2" name="Password2" placeholder="Repetir contraseña">
                 <select name="Pregunta_1" id="Pregunta_1">
-                    <option hidden>Pregunta 1</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="0" hidden>Pregunta 1</option>
+                    <option value="1">¿Cuál es el nombre de tu primera mascota?</option>
+                    <option value="2">¿Cuál es tu color favorito?</option>
+                    <option value="3">¿Cuál es tu lugar favorito para vacacionar?</option>
+                    <option value="4">¿Cuál es superhéroe favorito?</option>
+                    <option value="5">¿En qué ciudad nació su madre?</option>
+                    <option value="6">¿Cuál es comida favorita?</option>
                 </select>
                 <select name="Pregunta_2" id="Pregunta_2">
-                    <option hidden>Pregunta 2</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="0" hidden>Pregunta 2</option>
+                    <option value="1">¿Cuál es el nombre de tu orimera mascota?</option>
+                    <option value="2">¿Cuál es tu color favorito?</option>
+                    <option value="3">¿Cuál es tu lugar favorito para vacacionar?</option>
+                    <option value="4">¿Cuál es superheroe favorito?</option>
+                    <option value="5">¿En qué ciudad nació su madre?</option>
+                    <option value="6">¿Cuál es comida favorita</option>
                 </select>
                 <select name="Pregunta_3" id="Pregunta_3">
-                    <option hidden>Pregunta 3</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="0" hidden>Pregunta 3</option>
+                    <option value="1">¿Cuál es el nombre de tu orimera mascota?</option>
+                    <option value="2">¿Cuál es tu color favorito?</option>
+                    <option value="3">¿Cuál es tu lugar favorito para vacacionar?</option>
+                    <option value="4">¿Cuál es superheroe favorito?</option>
+                    <option value="5">¿En qué ciudad nació su madre?</option>
+                    <option value="6">¿Cuál es comida favorita</option>
                 </select>
-                <input type="text" name="Respuesta_1" placeholder="Respuesta 1">
-                <input type="text" name="Respuesta_2" placeholder="Respuesta 2">
-                <input type="text" name="Respuesta_3" placeholder="Respuesta 3">
+                <input type="text" id="Respuesta_1" name="Respuesta_1" placeholder="Respuesta 1">
+                <input type="text" id="Respuesta_2" name="Respuesta_2" placeholder="Respuesta 2">
+                <input type="text" id="Respuesta_3" name="Respuesta_3" placeholder="Respuesta 3">
             </form>
             <div class="botones_modal"> 
                 <div class="agregar_empleado">
-                    <button type="submit" name="agregar_empleado"><img src="../img/guardar_empleado.png" alt="Agregar empleado"></button>
+                    <button type="submit" id="agregar_empleado" name="agregar_empleado"><img src="../img/guardar_empleado.png" alt="Agregar empleado"></button>
                 </div>
                 <div class="volver">
                     <button type="button" name="volver" id="close"><img src="../img/volver.png" alt="Volver"></button>
@@ -53,3 +53,4 @@
             </div>
         </div>
     </div>
+    <script src="../js/nuevo_usuario.js"></script>

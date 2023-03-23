@@ -5,22 +5,35 @@ function nuevo_empleado() {
         new FormData(Empleado)
     )
 
-    if (data_empleado.Nombre == "" || data_empleado.S_Nombre == "" || data_empleado.Apellido == "" || data_empleado.S_Apellido == "" || data_empleado.CI == "" || data_empleado.Sexo == "" || data_empleado.Telefono == "" || data_empleado.Cargo == "" || data_empleado.Estado == null || data_empleado.Ciudad == null || data_empleado.Direccion == "") {
+    if (data_empleado.Nombre == ""|| data_empleado.Apellido == "" || data_empleado.CI == "" || data_empleado.Sexo == "" || data_empleado.Telefono == "" || data_empleado.Cargo == "" || data_empleado.Estado == "" || data_empleado.Ciudad == "" || data_empleado.Direccion == "") {
         alert("Hay campos vacios");
-    }else{
+    }else if (data_empleado.Telefono.length < 11) {
+        alert('Telefono incompleto');
+    } else{
         $.ajax({
             data:data_empleado,
             type:"POST",    
             url: "../controladores/nuevo_empleado.php",
             success: function(recieved) {
-                switch (recieved) {
+
+                if (recieved == 1) {
+                    alert('El Empleado ha sido resgistrado con exito')
+                    let check = document.getElementById('agregar_usuario').checked;
+                    if (check) {
+                        document.getElementById('cssmodal').setAttribute("href","../css/nuevo_usuario.css")
+                        $('#modal').load("pop-up/nuevo_usuario.html");
+                    }
+                }else{
+                    alert(recieved)
+                }
+                /* switch (recieved) {
                     case '':
                         alert('validado')
                         break;
                 
                     default:
                         break;
-                }
+                } */
             },
             error: function(request, status, error){
 
@@ -44,7 +57,7 @@ const maxLength_s_apellido = 12;
 const maxLength_ci = 8;
 const maxLength_telefono = 11;
 const maxLength_direccion = 60;
-const letras = /^[a-zA-Z]+$/;
+const letras = /^[a-zA-Zñ]+$/;
 const numeros = /^[0-9]+$/;
 
 function Caracteres(event){

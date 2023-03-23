@@ -42,10 +42,3 @@ function eliminar(U_Name){
     }
 }
 
-document.querySelector('#agregar_empleado').addEventListener('click',(e) => {
-    e.preventDefault()
-    const data = Object.fromEntries(
-        new FormData(nuevo_empleado)
-    );
-});
-
