@@ -1,10 +1,10 @@
 $('#agregar_empleado').on('click', nuevo_empleado);
 
 function nuevo_empleado() {
-    const data_empleado = Object.fromEntries(
+    var data_empleado = Object.fromEntries(
         new FormData(Empleado)
     )
-
+        
     if (data_empleado.Nombre == ""|| data_empleado.Apellido == "" || data_empleado.CI == "" || data_empleado.Sexo == "" || data_empleado.Telefono == "" || data_empleado.Cargo == "" || data_empleado.Estado == "" || data_empleado.Ciudad == "" || data_empleado.Direccion == "") {
         alert("Hay campos vacios");
     }else if (data_empleado.Telefono.length < 11) {
@@ -20,8 +20,15 @@ function nuevo_empleado() {
                     alert('El Empleado ha sido resgistrado con exito')
                     let check = document.getElementById('agregar_usuario').checked;
                     if (check) {
+                        localStorage.setItem('CI',data_empleado.CI)
                         document.getElementById('cssmodal').setAttribute("href","../css/nuevo_usuario.css")
-                        $('#modal').load("pop-up/nuevo_usuario.html");
+                        $('#modal').load("pop-up/nuevo_usuario.html")
+                        
+                        $('#modal').ready(function() {
+                            var script = document.createElement('script');
+                            script.src = "../js/nuevo_usuario.js";
+                            document.body.appendChild(script); 
+                        });
                     }
                 }else{
                     alert(recieved)

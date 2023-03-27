@@ -111,7 +111,7 @@ input[type="text"],input[type="search"],input[type="number"], input[type="passwo
     width: 15vw;
 	background: #fff;
     background-color: white;
-    border: 3px solid rgba(0,0,0,0.5);
+    border: 2px solid rgb(134,134,134);
     border-radius: 1.2vh;
     height: 5vh;
     line-height: 1.2vh;
@@ -119,6 +119,7 @@ input[type="text"],input[type="search"],input[type="number"], input[type="passwo
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
     padding-left: 8px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 input:hover, input:focus, select:hover, select:focus{

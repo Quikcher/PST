@@ -9,7 +9,7 @@ require("layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="../css/usuarios.css">
-<link id= "cssmodal" rel="stylesheet" href="../css/nuevo_usuario.css">
+<link id= "cssmodal" rel="stylesheet" href="../css/nuevo_empleado.css">
 
 <title>Administrador De Usuarios</title>
 </head>
@@ -20,7 +20,7 @@ require("layouts/header.php");
             <input type="search" class="buscar__buscador-input" name="input_buscar" id="input_buscar" placeholder="Buscar">
         </div>
         <div class="buscar__botones">
-            <button type="button" name="empleado" id="open"><img src="../img/empleado.png" alt=""></button>
+            <button type="button" name="empleado" id="open"><img src="../img/agg_empleado.png" alt=""></button>
         </div>
     </div>
 
@@ -41,13 +41,11 @@ require("layouts/header.php");
 </div>
 
 <div class="modal oculto" id="modal">
-    <?php
-        require("pop-up/nuevo_usuario.html"); 
-    ?>
+    <?php require("pop-up/nuevo_empleado.html"); ?>
 </div>
 <?php
 require("layouts/footer.html");
 ?>
-
+<script src="../js/nuevo_empleado.js"></script>
 <script src="../js/usuarios.js"></script>
 <script src="../js/ventana_modal.js"></script>

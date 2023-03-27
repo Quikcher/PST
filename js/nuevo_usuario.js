@@ -12,13 +12,15 @@ const Respuesta_3 = document.getElementById("Respuesta_3");
 
 /* Funcion para enviar datos al servidor */
 
-document.getElementById('agregar_empleado').addEventListener('click', agregar_empleado);
+document.getElementById('agregar_usuario').addEventListener('click', agregar_usuario);
+document.getElementById('regresar').addEventListener('click', regresar);
 
-function agregar_empleado(){
-    const data_usuario = Object.fromEntries(
-        new FormData(formUsuario)
-    )
-        console.log(JSON.stringify(data_usuario));
+function regresar(){
+    location.reload()
+}
+
+function agregar_usuario(){
+    
     if (Usuario.value == "" || Password.value == "" || Password2.value == "" || Respuesta_1.value == "" || Respuesta_2.value == "" || Respuesta_3.value == "") {
         alert('Hay campos vacios')
     } else if (Password.value != Password2.value) {
@@ -27,9 +29,11 @@ function agregar_empleado(){
         alert('Selecione las preguntas')
     }else{
 
-        const data_usuario = Object.fromEntries(
+        let data_usuario = Object.fromEntries(
             new FormData(formUsuario)
         )
+        CI = localStorage.getItem('CI');
+        data_usuario.CI_E = CI;
         $.ajax({
             data:data_usuario,
             type:"POST",    
@@ -39,10 +43,11 @@ function agregar_empleado(){
                 switch (recieved) {
                     case '1':
                         alert('El usuario ha sido asignado correctamente')
-                        break;
+                        regresar()
+                    break;
                 
                     default:
-                        alert(recieved)
+                        alert(recieved);
                         break;
                 }
             },
@@ -106,10 +111,9 @@ function bloqueo(){
 /* Maxima longitud de los inputs */
 
 const maxLength_Usuario = 15;
-const maxLength_Password= 20;
-const maxLength_Password2= 20;
+const maxLength_Password= 16;
+const maxLength_Password2= 16;
 const maxLength_Respuesta= 30;
-const letras = /^[a-zA-Zñ]+$/;
 
 /* Funciones de longitud */
 

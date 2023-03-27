@@ -4,7 +4,7 @@
 }
 
 .modalBox{
-    background-color: rgb(252, 225, 241);
+    background-color: rgb(255, 255, 255);
     width: 60vw;
     max-width: 80vw;
     grid-template-rows: 1fr 8fr 1fr;

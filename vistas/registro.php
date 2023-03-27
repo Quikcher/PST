@@ -18,8 +18,8 @@ require("layouts/header.php");
             <input type="search" class="buscar__buscador-input" name="input_buscar" id="input_buscar" placeholder="Buscar">
         </div>
         <div class="buscar__botones">
-            <button type="button" name="clientes" id="cliente"><img  src="../img/empleado.png" alt="Clientes"></button>
-            <button type="button" name="empleados" id="empleado"><img src="../img/empleado.png" alt="Empleados"></button>
+            <button type="button" name="clientes" id="cliente"><img  src="../img/mostrar_clientes.png" alt="Clientes"></button>
+            <button type="button" name="empleados" id="empleado"><img src="../img/mostrar_empleados.png" alt="Empleados"></button>
         </div>
     </div>
 

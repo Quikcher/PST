@@ -10,8 +10,8 @@
                     <option value="Administrador">Administrador</option>
                 </select>
                 <input type="text" id="U_Name" name="U_Name" placeholder="Usuario">
-                <input type="password" id="Password" name="Password" placeholder="Contraseña">
-                <input type="password" id="Password2" name="Password2" placeholder="Repetir contraseña">
+                <input type="password" id="Password" name="Password" placeholder="Contraseña" autocomplete="new-password">
+                <input type="password" id="Password2" name="Password2" placeholder="Repetir contraseña" autocomplete="new-password">
                 <select name="Pregunta_1" id="Pregunta_1">
                     <option value="0" hidden>Pregunta 1</option>
                     <option value="1">¿Cuál es el nombre de tu primera mascota?</option>
@@ -44,13 +44,12 @@
                 <input type="text" id="Respuesta_3" name="Respuesta_3" placeholder="Respuesta 3">
             </form>
             <div class="botones_modal"> 
-                <div class="agregar_empleado">
-                    <button type="submit" id="agregar_empleado" name="agregar_empleado"><img src="../img/guardar_empleado.png" alt="Agregar empleado"></button>
+                <div class="agregar_usuario">
+                    <button type="submit" id="agregar_usuario" name="agregar_usuario"><img src="../img/aceptar.png" alt="Agregar empleado"></button>
                 </div>
                 <div class="volver">
-                    <button type="button" name="volver" id="close"><img src="../img/volver.png" alt="Volver"></button>
+                    <button type="button" name="regresar" id="regresar"><img src="../img/volver.png" alt="Volver"></button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../js/nuevo_usuario.js"></script>
