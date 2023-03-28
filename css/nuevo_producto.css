@@ -1,0 +1,114 @@
+                                                    /* Generales */
+.modalBox{
+  width: 60vw;
+  height: 90vh;
+  max-height: 100vh;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-areas:"header_modal"
+                      "formulario_modal"
+                      "botones_modal";
+  gap: 2vh;
+}
+
+hr{
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.formulario_modal > div > input[type="number"]{
+  width: 7vw;
+}
+
+                                                    /* Header */
+.header_modal{
+  grid-area: header_modal;
+  height: 100%;
+  width: 60vw;
+  color: rgb(255,255,255);
+  display: grid;
+}
+
+.titulo_modal{
+  width: 100%;
+  height: calc(100% - 2vh);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: rgb(198,33,99);
+  border-radius: 1.2vh;
+  padding: 1vh 0;
+}
+
+                                                         /* Formulario */
+.formulario_modal{
+    grid-area: formulario_modal;
+    width: 60vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.formulario_modal hr:nth-child(5){
+  grid-row: 3 / 4;
+	grid-column: 1 / 3;
+}
+
+.formulario_modal > div{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Talla_1, .Talla_2, .Talla_3, .Talla_4, .Talla_5, .Talla_6, .Talla_7{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+                                                            /* Botones */
+.botones_modal{
+    grid-area: botones_modal;
+    height: 100%;
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 4vw;
+}
+
+.agregar_producto{
+    width: 100%;
+    display: grid;
+    justify-items: end;
+}
+
+.agregar_producto img{
+  height: 4.5vh;
+  width: auto;
+}
+
+.volver{
+    width: 100%;
+    display: grid;
+    justify-items: start;
+}
+
+.volver img{
+  height: 4.5vh;
+  width: auto;
+}
+
+.oculto{
+  display: none;
+}

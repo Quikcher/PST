@@ -9,7 +9,7 @@ require("layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="../css/inventario.css">
-<!-- <link id= "cssmodal" rel="stylesheet" href="../css/nuevo_producto.css"> -->
+<link rel="stylesheet" href="../css/nuevo_producto.css">
 
 <title>Inventario</title>
 </head>
@@ -20,7 +20,7 @@ require("layouts/header.php");
             <input type="search" class="buscar__buscador-input" name="input_buscar" id="input_buscar" placeholder="Buscar">
         </div>
         <div class="buscar__botones">
-            <button type="button" name="producto" id="open"><img src="../img/empleado.png" alt=""></button>
+            <button type="button" name="producto" id="open"><img src="../img/producto.png" alt=""></button>
         </div>
     </div>
 
@@ -30,24 +30,34 @@ require("layouts/header.php");
                 <tr>
                     <th>#</th>
                     <th>Producto</th>
-                    <th>Categoria</th>
                     <th>Linea</th>
+                    <th>Categoria</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody id="producto"></tbody>
+            <tbody id="producto">
+                <tr>
+                    <td>#</td>
+                    <td>Producto</td>
+                    <td>Linea</td>
+                    <td>Categoria</td>
+                    <td>Cantidad</td>
+                    <td>Precio</td>
+                    <td></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
 
-<!-- <div class="modal oculto" id="modal">
-    <?php /* require("pop-up/nuevo_producto.html"); */ ?>
-</div> -->
+<div class="modal oculto" id="modal">
+    <?php require("pop-up/nuevo_producto.html"); ?>
+</div>
 <?php
 require("layouts/footer.html");
 ?>
-<!-- <script src="../js/nuevo_producto.js"></script> -->
-<script src="../js/inventario.js"></script>
-<!-- <script src="../js/ventana_modal.js"></script> -->
+<script src="../js/nuevo_producto.js"></script>
+<!-- <script src="../js/inventario.js"></script> -->
+<script src="../js/ventana_modal.js"></script>
