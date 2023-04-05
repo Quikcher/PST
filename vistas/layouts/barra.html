@@ -2,7 +2,7 @@
         <div class="navegacion">
             <a href="inicio.php">
                 <div class="navegacion__img" id="inicio">
-                    <img title="Inicio" src="../img/ventas.png" alt="Inicio" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Inicio" src="../img/ventas.png" alt="Inicio">
                 </div>
             </a>
         </div>
@@ -10,7 +10,7 @@
         <div class="navegacion">
             <a href="usuarios.php">
                 <div class="navegacion__img" id="usuarios">
-                    <img title="Administrador de usuarios" src="../img/administrador.png" alt="Administrador de Usuario" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Administrador de usuarios" src="../img/administrador.png" alt="Administrador de Usuario">
                 </div>
             </a>
         </div>
@@ -18,7 +18,7 @@
         <div class="navegacion">
             <a href="registro.php">
                 <div class="navegacion__img">
-                    <img title="Registro" src="../img/clientes.png" alt="Registro" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Registro" src="../img/clientes.png" alt="Registro">
                 </div>
             </a>
         </div>
@@ -26,7 +26,7 @@
         <div class="navegacion">
             <a href="inventario.php">
                 <div class="navegacion__img">
-                    <img title="Inventario" src="../img/inventario.png" alt="Inventario" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Inventario" src="../img/inventario.png" alt="Inventario">
                 </div>
             </a>
         </div>
@@ -34,7 +34,7 @@
         <div class="navegacion">
             <a href="#">
                 <div class="navegacion__img">
-                    <img title="Reportes" src="../img/reportes.png" alt="Reportes" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Reportes" src="../img/reportes.png" alt="Reportes">
                 </div>
             </a>
         </div>
@@ -42,16 +42,21 @@
         <div class="navegacion">
             <a href="#">
                 <div class="navegacion__img">
-                    <img title="Acerca de..." src="../img/acerca_de.png" alt="Acerca de..." data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Acerca de..." src="../img/acerca_de.png" alt="Acerca de...">
                 </div>
             </a>
         </div>
 
-        <div class="navegacion">
-            <a href="#">
+        <div class="navegacion cuenta">
+            <a role="button" id="cuenta">
                 <div class="navegacion__img">
-                    <img title="Mi cuenta" src="../img/mi_cuenta.png" alt="Acerca de..." data-bs-toggle="tooltip" data-bs-placement="right">
+                    <img title="Mi cuenta" src="../img/mi_cuenta.png" alt="Mi cuenta">
                 </div>
             </a>
+            <div class="dropdown oculto" id="dropdown">
+                <a class="dropdown_menu" href="perfil.php">Mi perfil</a>
+                <hr>
+                <a class="dropdown_menu" href="../controladores/logout.php">Cerrar sesión</a>
+            </div>
         </div>
     </div>

@@ -20,7 +20,7 @@ require("layouts/header.php");
             <input type="search" class="buscar__buscador-input" name="input_buscar" id="input_buscar" placeholder="Buscar">
         </div>
         <div class="buscar__botones">
-            <button type="button" name="empleado" id="open"><img src="../img/agg_empleado.png" alt=""></button>
+            <button type="button" title="Empleado" name="empleado" id="open"><img src="../img/agg_empleado.png" alt=""></button>
         </div>
     </div>
 
@@ -46,6 +46,6 @@ require("layouts/header.php");
 <?php
 require("layouts/footer.html");
 ?>
-<script src="../js/nuevo_empleado.js"></script>
 <script src="../js/usuarios.js"></script>
+<script src="../js/nuevo_empleado.js"></script>
 <script src="../js/ventana_modal.js"></script>

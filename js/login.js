@@ -22,11 +22,13 @@ $( '#formulario' ).submit(function( event ) {
    data:consulta,
        type:"POST",    
        url: "controladores/login.php",
+       dataType:"json",
        success: function(received) {
        
-           switch (received) {
+           switch (received.U_Tipo) {
             case 'Administrador':
                 window.location.href='vistas/inicio.php'
+                sessionStorage.setItem('usuario',`${received.U_Name}`)
               break;
             case 'Empleado':
                 window.location.href='vistas/empleados/inicio.php'
@@ -37,6 +39,7 @@ $( '#formulario' ).submit(function( event ) {
               break;
            
             default:
+              console.log(received)
               break;
            }
        }

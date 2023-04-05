@@ -10,7 +10,7 @@ dolar.addEventListener('dblclick', (event) => {
 });
 
 
-addEventListener("load", (event) => {
+/* addEventListener("load", (event) => {
     $.ajax({
         async: true,
         url: "../controladores/tabla__inicio.php",
@@ -23,7 +23,7 @@ addEventListener("load", (event) => {
 
         }
     });
-});
+}); */
 
 document.getElementById('ventas').addEventListener('click', (e) => {
     location.href='pop-up/ventas.html';

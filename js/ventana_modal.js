@@ -10,6 +10,12 @@ close.addEventListener('click', () => {
   modal.classList.add('oculto');
 })
 
+/* modal.addEventListener('click', (e) => {
+  if(e.target == modal){
+    modal.classList.remove('show');
+  }
+}) */
+
 function ventas(){
   window.location.href='pop-up/ventas.html';
 }

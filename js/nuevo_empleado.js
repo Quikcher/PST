@@ -5,17 +5,16 @@ function nuevo_empleado() {
         new FormData(Empleado)
     )
         
-    if (data_empleado.Nombre == ""|| data_empleado.Apellido == "" || data_empleado.CI == "" || data_empleado.Sexo == "" || data_empleado.Telefono == "" || data_empleado.Cargo == "" || data_empleado.Estado == "" || data_empleado.Ciudad == "" || data_empleado.Direccion == "") {
+    if (data_empleado.Nombre == ""|| data_empleado.Apellido == "" || data_empleado.CI == "" || data_empleado.Sexo == "" || data_empleado.Telefono == "" || data_empleado.Cargo == "" || data_empleado.Estado == "" || data_empleado.Ciudad == "" || data_empleado.Direccion == "" || data_empleado.Correo == ""){
         alert("Hay campos vacios");
     }else if (data_empleado.Telefono.length < 11) {
         alert('Telefono incompleto');
-    } else{
+    }else{
         $.ajax({
             data:data_empleado,
             type:"POST",    
             url: "../controladores/nuevo_empleado.php",
             success: function(recieved) {
-
                 if (recieved == 1) {
                     alert('El Empleado ha sido resgistrado con exito')
                     let check = document.getElementById('agregar_usuario').checked;
@@ -86,37 +85,31 @@ function Numeros(event){
 }
 
 nombre.addEventListener("input", (event) => {
-    Caracteres(event);
     if(event.target.value.length > maxLength_nombre) {
         event.target.value = event.target.value.slice(0, maxLength_nombre);
     }
 });
 s_nombre.addEventListener("input", (event) => {
-    Caracteres(event);
     if (event.target.value.length > maxLength_s_nombre) {
         event.target.value = event.target.value.slice(0, maxLength_s_nombre);
     }
 });
 apellido.addEventListener("input", (event) => {
-    Caracteres(event);
     if (event.target.value.length > maxLength_apellido) {
         event.target.value = event.target.value.slice(0, maxLength_apellido);
     }
 });
 s_apellido.addEventListener("input", (event) => {
-    Caracteres(event);
     if (event.target.value.length > maxLength_s_apellido) {
         event.target.value = event.target.value.slice(0, maxLength_s_apellido);
     }
 });
 ci.addEventListener("input", (event) => {
-    Numeros(event);
   if (event.target.value.length > maxLength_ci) {
     event.target.value = event.target.value.slice(0, maxLength_ci);
   }
 });
 telefono.addEventListener("input", (event) => {
-    Numeros(event);
   if (event.target.value.length > maxLength_telefono) {
     event.target.value = event.target.value.slice(0, maxLength_telefono);
   }

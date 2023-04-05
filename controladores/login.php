@@ -6,10 +6,11 @@
     $U_Password = $_POST['U_Password'];
     $hash = md5($U_Password);
 
-    $consulta = "SELECT ID_U, U_Name, U_Tipo FROM $tabla_db22 WHERE U_Name = '$U_Name' AND U_Password = BINARY '$hash'";
+    $consulta = "SELECT ID_U, U_Name, U_Tipo FROM usuario WHERE U_Name = '$U_Name' AND U_Password = BINARY '$hash'";
     $resultado = mysqli_query($conexion,$consulta);
     $filas = mysqli_num_rows($resultado);
 
+    
     if($filas > 0){
         $datos = $resultado->fetch_assoc();
 
@@ -18,16 +19,8 @@
         $_SESSION['U_Name'] = $datos['U_Name'];
         $_SESSION['U_Tipo'] = $datos['U_Tipo'];
 
-        switch ($_SESSION['U_Tipo']){
-            case 'Administrador':
-                echo("Administrador");
-                //header('location: ../vistas/inicio.php');
-                break;
-            case 'Empleado':
-                echo("Empleado");
-                //header('location: ../vistas/empleados/inicio.php');
-                break;
-        }
+        echo json_encode($_SESSION);
+        
     }else{
         session_destroy();
         echo("noData");
