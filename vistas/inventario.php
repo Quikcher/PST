@@ -9,7 +9,7 @@ require("layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="../css/inventario.css">
-<link id="cssmodal" rel="stylesheet" href="../css/empleado.css">
+<link id="cssmodal" rel="stylesheet" href="../css/nuevo_producto.css">
 
 
 <title>Inventario</title>
@@ -21,7 +21,7 @@ require("layouts/header.php");
             <input type="search" class="buscar__buscador-input" name="input_buscar" id="input_buscar" placeholder="Codigo de Barras">
         </div>
         <div class="buscar__botones">
-            <button type="button" name="producto" id="open"><img src="../img/producto.png" alt=""></button>
+            <button title="Agregar producto" type="button" name="producto" id="open"><img src="../img/producto.png" alt=""></button>
         </div>
     </div>
 
@@ -45,8 +45,8 @@ require("layouts/header.php");
     </div>
 </div>
 
-<div class="modal" id="modal">
-    <?php require("pop-up/empleado.html"); ?>
+<div class="modal oculto" id="modal">
+    <?php require("pop-up/nuevo_producto.html"); ?>
 </div>
 <div class="modal oculto" id="mostrar">
     <?php require('pop-up/producto.html');?> 
@@ -54,6 +54,4 @@ require("layouts/header.php");
 <?php
 require("layouts/footer.html");
 ?>
-<script src="../js/nuevo_producto.js"></script>
 <script src="../js/inventario.js"></script>
-<script src="../js/ventana_modal.js"></script>
