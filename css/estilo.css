@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2? family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
-/* Generales */
+/*                                                           Generales                                                       */
 *{
     margin: 0;
     padding: 0;
@@ -35,8 +35,7 @@ h1{
     font-size: x-large;
 }
 
-
-                                                    /* Barra de navegación */
+/*                                                    Barra de navegación                                             */
 .barra{
     height: 100vh;
     width: 10vw;
@@ -133,6 +132,42 @@ h1{
 
 .oculto{
     display: none;
+}
+
+/*                                                          Tabla                                                   */
+table{
+    width: 100%;
+    max-height: 72vh;
+    border-collapse: separate;
+    border-spacing: 0vw 1vh;
+    border: transparent;
+    height: 10vh;
+}
+
+table thead{
+    background-color: rgb(255, 0, 76);
+    color: white;
+    position: sticky;
+    width: 100vw;
+    height: 5vh;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+
+table tr{
+    vertical-align: middle;
+    text-align: center;
+    height: 5vh;
+}
+
+table td::selection {
+    background-color: transparent;
+  }
+
+tbody > tr:hover{
+    background-color: rgba(80, 80, 80, 0.13);
+    cursor: pointer;
 }
 
                                                     /*  Botones  */  

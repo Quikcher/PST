@@ -5,40 +5,57 @@ addEventListener("load", (event) => {
         beforesend: function(result) {
             $('#mostrar').html("Cargando datos ...")
         },
-        success: function(result) {            
+        success: function(result) {   
+            
             $('#usuario').html(result)
+            const tabla = document.getElementById('tabla');
+            filas = tabla.getElementsByTagName('tr');
+            
+            for (let index = 1; index < filas.length; index++) {
+                
+                botonEliminar = filas[index].lastElementChild.lastChild
+                botonEliminar.addEventListener('click', (e)=>{
+                    e.stopPropagation();
+                    var usuario = filas[index].children[2].textContent;
+                    eliminar(usuario)
+                })
+            
+            }            
         },error: function(request, status, error){
 
         }
     });
 });
-
+/* MODAL ELIMINAR USUARIO */
 function eliminar(U_Name){
-   consulta = {
-    "U_Name": U_Name 
-   };
-   result = confirm("¿Desea eliminar el usuario: "+U_Name+"?");
 
-   if (result == true) {
+    $('#confirmacion').text(`Seguro que desea eliminar el usuario: ${U_Name}`)
+   $('#cssmodal').attr('href','../css/eliminar.css')
+   $('#eliminar').removeClass('oculto')
+
+   document.getElementById('eliminar_usuario').addEventListener('click',()=>{
+    let confirmarEliminar = Object.fromEntries(
+        new FormData(Eliminar));
+        confirmarEliminar.U_Name = U_Name;
         $.ajax({
-            data:consulta,
+            data:confirmarEliminar,
             type:"POST",    
             url: "../controladores/eliminar_usuario.php",
-            beforesend: function(result1) {
-                $('#DATOS').html("Mensaje antes de enviar")
-            },
-            success: function(result1) {
-                
-                if (result1 == 1) {
-                    alert("Usuario eliminado");
-                    location.reload();
+            dataType:'json',
+            success: function datos(recieved) {
+                if (recieved == 1) {
+                    alert('El Usuario ha sido eliminado');
+                    volver();
                 }
+    
             },
-            error: function(request, status, error){
-
-            }
         });
+    })
         
-    }
 }
 
+document.getElementById('cerrarEliminar').addEventListener('click',volver)
+function volver(){
+    $('#eliminar').addClass('oculto');
+    $('#cssmodal').attr('href','../css/nuevo_empleado.css')
+}

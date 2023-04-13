@@ -25,10 +25,11 @@ require("layouts/header.php");
     </div>
 
     <div class="tabla">
-        <table class="table">
+        <table class="table" id="tabla">
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Empleado</th>
                     <th>Usuario</th>
                     <th>Tipo de Usuario</th>
                     <th>Cédula</th>
@@ -42,6 +43,9 @@ require("layouts/header.php");
 
 <div class="modal oculto" id="modal">
     <?php require("pop-up/nuevo_empleado.html"); ?>
+</div>
+<div class="modal oculto" id="eliminar">
+<?php require("pop-up/eliminar.html"); ?>
 </div>
 <?php
 require("layouts/footer.html");

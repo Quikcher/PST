@@ -1,0 +1,94 @@
+                                                    /* Generales */
+.modalBox{
+  width: auto;
+  min-height: 20vh;
+  height: 35vh;
+  max-height: 50vh;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-areas:"header_modal"
+                      "formulario_modal"
+                      "botones_modal";
+  gap: 2vh;
+}
+
+.formulario_modal > div > input{
+  width: 15vw;
+}
+
+                                                    /* Header */
+.header_modal{
+  grid-area: header_modal;
+  height: 100%;
+  width: 100%;
+  color: rgb(255,255,255);
+  display: grid;
+}
+
+.titulo_modal{
+  width: 100%;
+  height: calc(100% - 2vh);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: rgb(198,33,99);
+  border-radius: 1.2vh;
+  padding: 1vh 0;
+}
+
+                                                         /* Formulario */
+.formulario_modal{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.formulario_modal p{
+  font-weight: bold;
+}
+
+.formulario_modal > div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario_modal > div > input{
+  margin-left: 2vw;
+}
+                                                            /* Botones */
+.botones_modal{
+    grid-area: botones_modal;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 4vw;
+}
+
+.eliminar_usuario{
+    width: 100%;
+    display: grid;
+    justify-items: end;
+}
+
+.eliminar_usuario img, .volver img{
+  height: 4.5vh;
+  width: auto;
+}
+
+.volver{
+    width: 100%;
+    display: grid;
+    justify-items: start;
+}
+
+.oculto{
+  display: none;
+}

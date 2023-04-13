@@ -26,7 +26,32 @@ function producto(){
         }
     });
 }
+                                        /* ELIMINAR EL PRODUCTO DE LA BASE DE DATOS */
 
+function eliminar(rotulado, codigoDeBarras){
+    consulta = {
+        "Codigo_Barras": codigoDeBarras 
+    };
+    result = confirm("¿Desea eliminar el producto: "+rotulado+"?");
+    
+    if (result == true) {
+        $.ajax({
+            data:consulta,
+            type:"POST",    
+            url: "../controladores/eliminar_producto.php",
+            success: function(result1) {
+
+                if (result1 == 1) {
+                    alert("Producto eliminado");
+                    producto();
+                }
+            },
+            error: function(request, status, error){
+
+            }
+        });
+    }
+}
                                         /* MODAL PARA AGREGAR EL PRODUCTO A LA BASE DE DATOS */
 const open = document.getElementById('open');
 const modal = document.getElementById('modal');
@@ -101,32 +126,7 @@ for (let element of form.elements) {
   }
 }
 }
-                                        /* ELIMINAR EL PRODUCTO DE LA BASE DE DATOS */
 
-function eliminar(rotulado, codigoDeBarras){
-    consulta = {
-        "Codigo_Barras": codigoDeBarras 
-    };
-    result = confirm("¿Desea eliminar el producto: "+rotulado+"?");
-
-    if (result == true) {
-        $.ajax({
-            data:consulta,
-            type:"POST",    
-            url: "../controladores/eliminar_producto.php",
-            success: function(result1) {
-
-                if (result1 == 1) {
-                    alert("Producto eliminado");
-                    producto();
-                }
-            },
-            error: function(request, status, error){
-
-            }
-        });
-    }
-}
 
                                                 /* MODAL QUE MUESTRA LOS DATOS DEL PRODUCTO */
 
@@ -177,24 +177,28 @@ $('#editar').on('click', function(){
             new FormData(editarProducto));
             editar.Codigo_Barras = ver[0].Codigo_Barras;
             editar.editar = 1;
-            $.ajax({
-                data:editar,
-                type:"POST",    
-                url: "../controladores/nuevo_producto.php",
-                success: function(result1) {
-    
-                    if (result1 == 2) {
-                        alert("Producto editado");
-                        volver();
-                        producto();
-                    }else {
-                        alert(result1)
-                    }
-                },
-                error: function(request, status, error){
-    
-                }
-            });
+            if (ver[0].Nom_Producto != editar.Nom_Producto || ver[0].Precio != editar.Precio ) {
+                $.ajax({
+                    data:editar,
+                    type:"POST",    
+                    url: "../controladores/nuevo_producto.php",
+                    success: function(result1) {
+        
+                        if (result1 == 2) {
+                            alert("Producto editado");
+                            volver();
+                            producto();
+                        }else {
+                            alert(result1)
+                        }
+                    },
+                });
+            }else{
+                alert('No se han realizado cambios al producto: '+ver[0].Nom_Producto);
+                $('#Nom_Producto').html(`<b>${ver[0].Nom_Producto}</b>`);
+                $('#Precio_').html(`${ver[0].Precio}$`);
+                click = false
+            }
         }
     
 })
@@ -207,6 +211,9 @@ function volver(){
     $('#cssmodal').attr('href','../css/nuevo_producto.css')
     click = false;
 }
+
+/* BUSCADOR DE DATOS EN LA TABLA DE PRODUCTOS */
+
 const input = document.getElementById('input_buscar');
 const table = document.getElementById('tabla');
 const tr = table.getElementsByTagName('tr');
