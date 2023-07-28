@@ -1,6 +1,6 @@
 <?php
 	require("../conexion/abrir_conexion.php");
-	$resultado = mysqli_query($conexion, "SELECT CONCAT(persona.Nombre, ' ', persona.Apellido) AS Nombre, empleado.CI_E, empleado.Cargo, empleado.Num_Carnet, telefono.Numero
+	$resultado = mysqli_query($conexion, "SELECT DISTINCT CONCAT(persona.Nombre, ' ', persona.Apellido) AS Nombre, empleado.CI_E, empleado.Cargo, empleado.Num_Carnet, telefono.Numero
     FROM persona
     JOIN empleado ON persona.CI = empleado.CI_E
     JOIN telefono ON empleado.CI_E = telefono.CI ORDER BY empleado.Cargo, Nombre");

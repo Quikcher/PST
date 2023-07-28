@@ -9,6 +9,8 @@ require("layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="../css/registro.css">
+<link id= "cssmodal" rel="stylesheet" href="../css/empleado.css">
+
 <title>Registro</title>
 </head>
 <?php include("layouts/barra.html") ?>
@@ -53,6 +55,12 @@ require("layouts/header.php");
             <tbody></tbody>
         </table>
     </div>
+</div>
+<div class="modal oculto" id="mostrar">
+    <?php require('pop-up/empleado.html');?> 
+</div>
+<div class="modal oculto" id="eliminar">
+    <?php require('pop-up/eliminar.html');?> 
 </div>
 <script src="../js/registro.js"></script>
 <?php

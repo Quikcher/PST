@@ -33,19 +33,24 @@ function eliminar(U_Name){
    $('#cssmodal').attr('href','../css/eliminar.css')
    $('#eliminar').removeClass('oculto')
 
-   document.getElementById('eliminar_usuario').addEventListener('click',()=>{
+   document.getElementById('delete').addEventListener('click',()=>{
     let confirmarEliminar = Object.fromEntries(
         new FormData(Eliminar));
         confirmarEliminar.U_Name = U_Name;
         $.ajax({
             data:confirmarEliminar,
             type:"POST",    
-            url: "../controladores/eliminar_usuario.php",
+            url: "../controladores/eliminar.php",
             dataType:'json',
             success: function datos(recieved) {
                 if (recieved == 1) {
                     alert('El Usuario ha sido eliminado');
                     volver();
+                }else if (recieved == 0) {
+                    alert('Contraseña incorrecta');
+                } else if (recieved== 404) {
+                    alert('Ha ocurrido un error al intentar eliminar el usuario');
+                    
                 }
     
             },

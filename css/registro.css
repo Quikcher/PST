@@ -81,3 +81,7 @@ tbody > tr:hover{
 .tabla1::-webkit-scrollbar, .tabla2::-webkit-scrollbar{
   display: none;
 }
+
+.oculto{
+  display: none;
+}

@@ -11,10 +11,6 @@
   gap: 2vh;
 }
 
-.formulario_modal > div > input{
-  width: 15vw;
-}
-
                                                     /* Header */
 .header_modal{
   grid-area: header_modal;
@@ -50,15 +46,16 @@
   font-weight: bold;
 }
 
-.formulario_modal > div{
+.confirmar_password{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.formulario_modal > div > input{
+#password_confirmacion{
   margin-left: 2vw;
+  width: 15vw;
 }
                                                             /* Botones */
 .botones_modal{

@@ -8,6 +8,7 @@ if($_SESSION['U_Tipo'] != 'Administrador'){
 require("layouts/header.php"); 
 ?>
 
+<link rel="stylesheet" href="../css/eliminar.css">
 <link rel="stylesheet" href="../css/usuarios.css">
 <link id= "cssmodal" rel="stylesheet" href="../css/nuevo_empleado.css">
 
